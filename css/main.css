@@ -31,13 +31,29 @@
 }
 
 body {
-    font-family: "Gilroy";
-    font-weight: 800;
+    font-family: "OpenSans";
+    font-weight: 300;
 }
 
 .container {
     width: 1160px; 
     margin: 0 auto;
+}
+
+.main-button {
+    display: block;
+    width: 260px;
+    background: 
+        linear-gradient(#fff 16px, #f0c52e 16px, #f0c52e 24px, #fff 24px);
+    text-align: center;
+    padding: 11px 0;
+    font-size: 18px;
+    font-family: "Gilroy";
+    font-weight: 800;    
+    line-height: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
 }
 
 .main-header {
@@ -62,6 +78,8 @@ body {
     margin: 0;
     padding: 16px 0;
     font-size: 48px;
+    font-family: "Gilroy";
+    font-weight: 800;    
     text-transform: uppercase;
     line-height: 48px;
 }
@@ -122,6 +140,8 @@ body {
     list-style: none;
     padding: 0;
     margin-bottom: 70px;
+    font-family: "Gilroy";
+    font-weight: 800;    
 }
 
 .main-navigation-item:nth-child(n + 1){
@@ -164,6 +184,8 @@ body {
     margin: 0;
     margin-top: -25px;
     font-size: 47px;
+    font-family: "Gilroy";
+    font-weight: 800;    
     position: relative;
 }
 
@@ -190,27 +212,7 @@ body {
 }
 
 .main-slogan-button {
-    display: block;
-    width: 220px;
-    height: 12px;
-    text-align: center;
-    margin-bottom: 50px;
-    color: #000;
-    font-size: 18px;
-    text-decoration: none;
-    text-transform: uppercase;
-    position: relative;
-}
-
-.main-slogan-button::before {
-    content: "";
-    width: 220px;
-    height: 8px;
-    background-color: #f0c52e;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    z-index: -1;
+    width: 220px;    
 }
 
 .characteristic-item {
@@ -231,6 +233,7 @@ body {
 
 .characteristic-title {
     font-size: 36px;
+    font-family: "Gilroy";   
     font-weight: 300;
 }
 
@@ -286,6 +289,8 @@ body {
 
 .product-title {
     font-size: 18px;
+    font-family: "Gilroy";
+    font-weight: 800; 
 }
 
 .servises-wrap {
@@ -299,7 +304,8 @@ body {
     margin: 0 auto;
     display: flex;
     background: url(img/delivery.png) no-repeat right 60px top 85px;
-        
+    font-family: "Gilroy";
+    font-weight: 800;         
     position: relative;
 }
 
@@ -322,31 +328,35 @@ body {
 }
 
 .servises-list-item {
-    width: 278px;
+    width: 160px;
     line-height: 30px;
     font-size: 15px;
     padding: 5px 0;
-    padding-right: 120px;
     margin-bottom: 24px;
+    margin-right: 118px;
+    background: 
+        linear-gradient(#e5e5e5 16px, #f0c52e 16px, #f0c52e 24px, #e5e5e5 24px);
     text-align: center;
     text-transform: uppercase;
     position: relative;
 }
 
-.servises-list-item::before {
-    content: "";
-    display: block;
+.servises-list-item_active {
     width: 160px;
-    height: 8px;
-    background-color: #f0c52e;
-    position: absolute;
-    top: 16px;
-    z-index: -1;
+    background: #000;
+    color: #f0c52e;
 }
 
-.servises-list-item_active {
+.servises-list-item_active::after {
+    content: "";
+    display: block;
+    width: 118px;
+    height: 100%;
     background-color: #000;
-    color: #f0c52e;
+    position: absolute;
+    top: 0;
+    left: 160px;
+    
 }
 
 .services-description-item {
@@ -370,13 +380,179 @@ body {
 }
 
 .partners {    
+    display: flex;
+    flex-wrap: wrap;
     width: 1160px; 
     margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .other-information {
+    display: flex;
+    flex-wrap: wrap;
     width: 1160px; 
     margin: 0 auto;
+    font-family: "Gilroy";
+    font-weight: 800; 
 }
+
+.about_us {
+    width: 600px;
+    padding-right: 140px;
+    
+}
+
+.contacts {
+    width: 560px;
+}
+
+.other-information-title {
+    font-size: 47px;
+    margin: 0;
+    padding-top: 50px;
+    position: relative;
+}
+
+.other-information-title::before {
+    content: "";
+    display: block;
+    width: 80px;
+    border-top: 7px solid #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.other-information-text {
+    font-family: "OpenSans";
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 30px;
+}
+
+.delivery {
+    padding-top: 70px;
+    list-style: none;
+}
+
+.delivery-item {
+    margin-bottom: 20px;
+    padding-left: 10px;
+    position: relative;
+}
+
+.delivery-item::before {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: url('img/slider-button.png');
+    position: absolute;
+    top: calc(50% - 4px);
+    left: 0;
+} 
+
+.main-footer {
+    background-color: #464646;
+    padding: 65px 0;
+    color: #fff;
+}
+
+.main-footer-item {
+    display: flex;
+}
+
+.main-footer-item:nth-child(2) {
+    justify-content: space-between;
+} 
+
+.footer-title {
+    font-size: 47px;
+    margin: 0;
+    color: #ffc600;
+    font-family: "Gilroy";
+    font-weight: 800; 
+    text-transform: uppercase;
+    margin-right: auto;
+    position: relative;
+}
+
+.footer-title::before {
+    content: "";
+    display: block;
+    width: 80px;
+    border-top: 7px solid #ffc600;
+    position: absolute;
+    bottom: -137px;
+}
+
+.footer-element {
+    display: flex;
+}
+
+.footer-element div {
+    height: 36px;
+    padding-left: 25px;
+    margin-left: 35px;
+    font-size: 15px;
+    line-height: 36px;
+}
+
+.footer-autorisation {
+    background: url("img/user-footer.png") left center no-repeat;
+}
+
+.footer-compare {
+    background: url("img/compare-footer.png") left center no-repeat;
+}
+
+.footer-basket {
+    background: url("img/basket-footer.png") left center no-repeat;
+}
+
+.footer-services {
+    display: flex;
+}
+
+.footer-services-item {
+    margin-right: 35px;
+    font-family: "Gilroy";
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.social-box {
+    width: 440px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 70px;
+}
+
+.social-box-item {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-right: 20px;
+    border-radius: 50%;
+    background-color: #7e7e7e;
+}
+
+.logohtml{
+    padding-top: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
