@@ -64,7 +64,7 @@ body {
 
 .main-header {
     position: relative;
-    margin-bottom: 102px;
+    margin-bottom: 116px;
     padding: 0 60px;
 }
 
@@ -192,18 +192,31 @@ body {
     position: relative;
 }
 
+.header-content [type="radio"] {
+    display: none;
+}
+
 .control-box {
     display: flex;
     position: absolute;
+    right: 22px;
+    top: 326px;
+    z-index: 10;
     
 }
 
 .control-item {
+    display: block;
     width: 12px;
     height: 12px;
+    margin-right: 21px;
     border: 2px solid #1f1f1f;
     border-radius: 50%;
     position: relative;
+}
+
+.control-item:last-child {
+    margin-right: 0;
 }
 
 .control-item::before {
@@ -218,9 +231,9 @@ body {
     left: 1px;
 }
 
-#control1:checked ~ [for="control1"] .control-item::before,
-#control2:checked ~ [for="control2"] .control-item::before,
-#control3:checked ~ [for="control3"] .control-item::before {
+#control1:checked ~ .control-box [for="control1"]::before,
+#control2:checked ~ .control-box [for="control2"]::before,
+#control3:checked ~ .control-box [for="control3"]::before {
     display: block;
 }
 
@@ -326,19 +339,11 @@ body {
 }
 
 .characteristic-item {
-    width: 100px;
-}
-
-.characteristic-item:nth-child(1) {
-    margin-right: 60px;
+    width: 160px;
 }
 
 .characteristic-item:nth-child(2) {
-    margin-right: 40px;
-}
-
-.characteristic-item:last-child {
-    width: 160px;
+    width: 140px;
 }
 
 .characteristic-title {
@@ -408,7 +413,7 @@ body {
     padding-left: 2px;
 }
 
-.servises-wrap {
+.services-wrap {
     width: 100wv;
     height: 390px;
     background-image:  linear-gradient(to bottom,#fff 100px, #e5e5e5 100px, #e5e5e5 490px, #fff 490px);
@@ -418,13 +423,16 @@ body {
     width: 1160px; 
     margin: 0 auto;
     display: flex;
-    background: url(img/delivery.png) no-repeat right 64px top 85px;
     font-family: "Gilroy";
     font-weight: 800;         
     position: relative;
 }
 
-.servises-list {
+.services [type="radio"] {
+    display: none;
+}
+
+.services-list {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -437,51 +445,79 @@ body {
 
 .services-description-item {
     display: none;
+    padding-top: 70px;
+    padding-left: 2px;
+    position: relative;
 }
 
-.services-description-item:first-child {
+/**/
+
+#services1:checked ~ .services-description .description-item1,
+#services2:checked ~ .services-description .description-item2,
+#services3:checked ~ .services-description .description-item3 {
     display: block;
 }
 
-.servises-list-item {
+.description-item1::after {
+    content: "";
+    display: block;
+    width: 136px;
+    height: 164px;
+    background: url(img/delivery.png) no-repeat;
+    position: absolute;
+    top: 85px;
+    right: -232px;
+}
+
+.description-item2::after {
+    content: "";
+    display: block;
+    width: 171px;
+    height: 194px;
+    background: url(img/warranty.png) no-repeat;
+    position: absolute;
+    top: 61px;
+    right: -252px;
+}
+
+.description-item3::after {
+    content: "";
+    display: block;
+    width: 156px;
+    height: 186px;
+    background: url(img/credit.png) no-repeat;
+    position: absolute;
+    top: 61px;
+    right: -228px;
+}
+
+
+
+.services-list-item {
+    display: block;
     width: 160px;
     line-height: 30px;
     font-size: 18px;
     padding: 5px 0;
     padding-left: 7px;
     margin-bottom: 24px;
-    margin-right: 118px;
     background: 
-        linear-gradient(#e5e5e5 16px, #f0c52e 16px, #f0c52e 24px, #e5e5e5 24px);
+        linear-gradient(rgba(0,0,0,0) 16px, #f0c52e 16px, #f0c52e 24px, rgba(0,0,0,0) 24px);
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 4px;
-    position: relative;
     cursor: pointer;
-}
-
-.servises-list-item_active {
-    width: 160px;
-    background: #000;
-    color: #f0c52e;
-}
-
-.servises-list-item_active::after {
-    content: "";
-    display: block;
-    width: 118px;
-    height: 100%;
-    background-color: #000;
-    position: absolute;
-    top: 0;
-    left: 160px;
     
 }
 
-.services-description-item {
-    padding-top: 70px;
-    padding-left: 2px;
-}
+#services1:checked ~ .services-list .services1,
+#services2:checked ~ .services-list .services2,
+#services3:checked ~ .services-list .services3 {
+    width: 278px;
+    padding-right: 118px;
+    background: #000;
+    color: #f0c52e;
+ }
 
 .services-description-title {
     width: 260px;
